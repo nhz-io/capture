@@ -93,4 +93,4 @@ ee.emit('error', new Error('Emitted error'))
 
 ## License [MIT](LICENSE)
 
-## Version 1.0.1
+## Version 1.0.2
