@@ -1,0 +1,14 @@
+.nyc_output
+.vscode
+.nycrc
+.travis.yml
+.eslintrc
+.gitignore
+.npmignore
+test.js
+coverage
+tmp
+node_modules
+*.log
+npm-debug.log*
+*.swp
