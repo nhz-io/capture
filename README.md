@@ -1,7 +1,7 @@
 # @nhz.io/capture
 
 <p align="center">
-  <a href="https://npmjs.org/package/capture">
+  <a href="https://npmjs.org/package/@nhz.io/capture">
     <img src="https://img.shields.io/npm/v/@nhz.io/capture.svg?style=flat"
          alt="NPM Version">
   </a>
@@ -92,3 +92,5 @@ ee.emit('error', new Error('Emitted error'))
 ```
 
 ## License [MIT](LICENSE)
+
+## Version 1.0.1
