@@ -1,6 +1,11 @@
 # @nhz.io/capture
 
 <p align="center">
+  <a href="https://npmjs.org/package/capture">
+    <img src="https://img.shields.io/npm/v/@nhz.io/capture.svg?style=flat"
+         alt="NPM Version">
+  </a>
+  
   <a href="https://travis-ci.org/nhz-io/capture">
     <img src="https://img.shields.io/travis/nhz-io/capture.svg?style=flat"
          alt="Travis Build">
@@ -9,11 +14,6 @@
   <a href="https://coveralls.io/github/nhz-io/capture">
     <img src="https://img.shields.io/coveralls/nhz-io/capture.svg?style=flat"
          alt="Coveralls">
-  </a>
-
-  <a href="https://npmjs.org/package/capture">
-    <img src="https://img.shields.io/npm/v/@nhz.io/capture.svg?style=flat"
-         alt="NPM Version">
   </a>
 
   <a href="https://www.bithound.io/github/nhz-io/capture">
