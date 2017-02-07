@@ -63,5 +63,4 @@ test.cb('wrap event emitter and capture emitted errors', t => {
     })
 
     $capture(new EventEmitter()).emit('error', pass)
-
 })
