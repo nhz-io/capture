@@ -1,7 +1,36 @@
 # @nhz.io/capture
 
-Capture errors from various sources. Automatically wraps:
+<p align="center">
+  <a href="https://travis-ci.org/nhz-io/capture">
+    <img src="https://img.shields.io/travis/nhz-io/capture.svg?style=flat"
+         alt="Travis Build">
+  </a>
 
+  <a href="https://coveralls.io/github/nhz-io/capture">
+    <img src="https://img.shields.io/coveralls/nhz-io/capture.svg?style=flat"
+         alt="Coveralls">
+  </a>
+
+  <a href="https://npmjs.org/package/capture">
+    <img src="https://img.shields.io/npm/v/@nhz.io/capture.svg?style=flat"
+         alt="NPM Version">
+  </a>
+
+  <a href="https://www.bithound.io/github/nhz-io/capture">
+    <img src="https://img.shields.io/bithound/code/github/nhz-io/capture.svg?style=flat"
+         alt="Bithound Status">
+  </a>
+
+  <a href="https://github.com/nhz-io/capture/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/nhz-io/capture.svg?style=flat"
+         alt="License">
+  </a>
+</p>
+<p align="center">
+    <h3 align="center">Capture errors from various sources and forward to reporter</h3>
+</p>
+
+## Available auto-wrappers
 * **Functions**
 * **Callbacks**
 * **Promises**
