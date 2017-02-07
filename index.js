@@ -1,4 +1,6 @@
-const {EventEmitter} = require('events')
+function hasProp($, name) {
+    return $ && Object.prototype.hasOwnProperty.call($, name)
+}
 
 function prepare(report) {
     if (typeof report !== 'function') {
@@ -15,7 +17,7 @@ function prepare(report) {
         },
         
         * error($) {
-            if ($ instanceof Error) {
+            if (hasProp($, 'stack')) {
                 report($)
                 
                 yield $
@@ -25,7 +27,7 @@ function prepare(report) {
         * func($) {
             if (typeof $ === 'function') {
                 yield function wrapped(...args) {
-                    if (args[0] instanceof Error) {
+                    if (hasProp(args[0], 'stack')) {
                         report(args[0])
                     }
                     
@@ -50,7 +52,7 @@ function prepare(report) {
         },
         
         * emitter($) {
-            if ($ instanceof EventEmitter) {
+            if ($ && typeof $.addListener === 'function') {
                 $.removeListener('error', report)
                 $.addListener('error', report)
                 

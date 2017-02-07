@@ -57,6 +57,7 @@ test('wrap promise and capture rejected errors', t => {
 
 test.cb('wrap event emitter and capture emitted errors', t => {
     const pass = new Error()
+
     const $capture = init(err => {
         t.is(err, pass)
         t.end()
