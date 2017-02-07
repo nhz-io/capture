@@ -30,7 +30,7 @@ function prepare(report) {
                     }
                     
                     try {
-                        return $.apply(this, args)
+                        return $.apply(this, args) // eslint-disable-line no-invalid-this
                     }
                     catch (err) {
                         report(err)
