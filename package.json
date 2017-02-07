@@ -1,0 +1,25 @@
+{
+  "name": "@nhz.io/capture",
+  "version": "1.0.0",
+  "description": "Capture errors from various sources and forward to reporter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhz-io/capture.git"
+  },
+  "keywords": [
+    "nhz.io",
+    "capture",
+    "error",
+    "errors"
+  ],
+  "author": "Ishi Ruy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nhz-io/capture/issues"
+  },
+  "homepage": "https://github.com/nhz-io/capture#readme"
+}
