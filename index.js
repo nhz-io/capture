@@ -67,6 +67,8 @@ function compose(...captures) {
                 return res
             }
         }
+
+        return $
     }
 }
 
