@@ -1,5 +1,5 @@
-function hasProp($, name) {
-    return $ && Object.prototype.hasOwnProperty.call($, name)
+function isError($) {
+    return $ && Object.prototype.toString.call($) === '[object Error]'
 }
 
 function prepare(report) {
@@ -16,26 +16,26 @@ function prepare(report) {
             yield $
         },
         
-        * error($) {
-            if (hasProp($, 'stack')) {
-                report($)
+        * error($, ...args) {
+            if (isError($)) {
+                report($, ...args)
                 
                 yield $
             }
         },
         
-        * func($) {
+        * func($, ctx) {
             if (typeof $ === 'function') {
                 yield function wrapped(...args) {
-                    if (hasProp(args[0], 'stack')) {
-                        report(args[0])
+                    if (isError(args[0])) {
+                        report(...args, ctx)
                     }
                     
                     try {
                         return $.apply(this, args) // eslint-disable-line no-invalid-this
                     }
                     catch (err) {
-                        report(err)
+                        report(err, ctx)
                         
                         throw err
                     }
@@ -43,18 +43,18 @@ function prepare(report) {
             }
         },
         
-        * promise($) {
+        * promise($, ctx) {
             if ($ && typeof $.catch === 'function') {
-                $.catch(report)
+                $.catch(err => report(err, ctx))
                 
                 yield $
             }
         },
         
-        * emitter($) {
+        * emitter($, ctx) {
             if ($ && typeof $.addListener === 'function') {
-                $.removeListener('error', report)
-                $.addListener('error', report)
+                $.removeListener('error', (...args) => report(...args, ctx))
+                $.addListener('error', (...args) => report(...args, ctx))
                 
                 yield $
             }
@@ -63,9 +63,9 @@ function prepare(report) {
 }
 
 function compose(...captures) {
-    return function $capture($) {
+    return function $capture($, ...args) {
         for (const capture of captures) {
-            for (const res of capture($)) {
+            for (const res of capture($, ...args)) {
                 return res
             }
         }
