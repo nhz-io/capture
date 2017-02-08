@@ -1,6 +1,6 @@
 {
   "name": "@nhz.io/capture",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Capture errors from various sources and forward to reporter",
   "main": "index.js",
   "scripts": {
