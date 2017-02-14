@@ -2,5 +2,13 @@ language: node_js
 node_js:
 - '6'
 after_success: npm run coveralls
-env:
-  secure: eXM29fZg88uOe2tVdbVpe4YwW0uQ3tmFW0MGxQyo3A0GPVDEo6LvmfYgjd44xrxI1wmp7epbLJFkoDjFKS3xl6FELCweZDNY6Xw/3FCHLtWRFK7MWgv7IYpTHlAKVaRBh57iF4iZ2sH95GRV2ZqkO+kweycov+2cJh0BSp+SLFE/uO0udsOJwaWtkZ9R5uWDneT3mMN3cqmSZgPbad1oRjS1c+EJLRZDqTkiS7NvTzz7oqsUtVxQMSeGLrSFvTOEqab0b9j0areF42fcJhWgWwmJIzjk7BLbdlKLAXEVgvg1WK/c27C6zw6K4xykXonvFUsbj3MNAkJE7CSt/euar0vLZVXAU6gcCYEdBMfBMbewhS9R56Zfha24SLedom5Wl4DdJiQNnDHdwmBReHJp+S1cDQWJ4eYvaxg6+A+hQdlaV8yQBZdXQfLVQAMQJ3wlwdEqdB2/Jm/gyTPmM6ddVK6CP0YvcmkMdAhT7IxRN4BLBY9Tc7zP3Y1OWyljTm9HwD5F89OEfHDQXANDI8vL2O9JdBcuEh29vv2hQItAE1cxQpa/tD0IOSIS8PvRP2ofPZyzLs5b0MK0hOQqhRYhaOBVcGW2zrLmPU1BgU+yrodsVYPVIMpX4XDZaBfBgh9tKKQ0RIReeOoE2Y0wm/4J0IWkm+QaAEZc9WDakjE8kPc=
+deploy:
+  - provider: script
+    script: echo "//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" > ~/.npmrc 2>/dev/null
+    on:
+      tags: true
+
+  - provider: script
+    script: npm publish --access public
+    on:
+      tags: true
